@@ -1,0 +1,408 @@
+@import url('https://fonts.googleapis.com/css2?family=Electrolize&family=Lemon&family=Open+Sans:wght@400;600&family=PT+Serif:ital,wght@0,400;0,700;1,400&family=Poppins:ital,wght@0,300;0,500;0,600;0,700;0,800;1,200;1,400&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+}
+
+body{
+   
+    font-family: 'Electrolize', sans-serif;
+}
+
+.container{
+    background-color: black;
+    color: white;
+}
+/* NAVBAR START */
+.navbar{
+    background-color: black;
+    color: white;
+    height: 3.125rem;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.navbar-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 0 3.125rem;
+    
+}
+
+.logo{
+    font-size: 1,875rem;
+    color: rgb(255, 70, 70);
+}
+
+
+.menu-list{
+    display: flex;
+    column-gap: 1.875rem;
+    padding: 0;
+
+}
+
+
+.menu-list-item{
+    cursor: pointer;
+
+}
+.menu-list-item-active{
+    cursor: pointer;
+    font-weight: bold;
+
+}
+
+.profile-picture{
+    width: 2rem;
+    height: 2rem;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.profile-container{
+    display: flex;
+    align-items: center;
+    column-gap: 1.25rem;
+}
+
+.profile-text-container{
+    display: flex;
+    align-items: center;
+    column-gap: 0.3125rem;
+    line-height: 1;
+}
+
+.toggle{
+    width: 2.5rem;
+    background-color: white;
+    height: 1.25rem;
+    border-radius: 1.875rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+}
+
+.toggle-icon{
+
+    color: goldenrod;
+}
+.toggle-ball{
+    width: 1.125rem;
+    height: 1.125rem;
+    background-color: black;
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute;
+    right: 0.16rem;
+    transition: .2s ease all;
+}
+
+
+.menu-list-item:hover{
+    font-weight: bold;
+}
+/* NAVBAR END */
+
+/* sidebar start*/
+.sidebar{
+    background-color: black;
+    color: white;
+    height: 100%;
+    width: 3.125rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 3.75rem;
+    row-gap: 2.5rem;
+    position: fixed;
+    top: 0;
+}
+
+.sidebar i{
+    color: white;
+    font-size: 1.25rem;
+    cursor: pointer;
+
+}
+/*sidebar end */
+
+/* featured start*/
+
+.content-wrapper{
+    margin-left: 3.125rem;
+}
+
+.featured-content{
+    background: url(/img/spiderman.jpg);
+    padding: 3.125rem;
+    height: calc(100vh - 150px);
+    background-size: 100% 100%;
+}
+
+.featured-title{
+    width: 25rem;
+}
+
+.featured-desc{
+    width: 31.25rem;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 0.625;
+    margin: 1.875rem 0;
+    color: black;
+}
+
+.featured-buttons{
+    display: flex;
+    column-gap: 1.25rem;
+}
+
+.featured-buttons button{
+
+    padding: 0.625rem 1.5625rem;
+    border-radius: 0.125rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    column-gap: 0.625rem;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.featured-buttons .info-button{
+    background-color: rgba(145, 142, 142, 0.5);
+    color: white;
+}
+/* featured end*/
+
+
+/* Filter start */
+
+.movie-list-filter{
+
+    
+    padding: 1.25rem;
+
+}
+
+
+
+
+
+.movie-list-filter select{
+    background-color: black;
+    color: white;
+    padding: 0.4375rem 0;
+    width: 7.8125rem;
+
+}
+
+
+/* Movie list start */
+
+.movie-list-container{
+
+    margin-left: 4.375rem;
+}
+
+.movie-item{
+    position: relative;
+}
+
+
+.movie-item:hover .movie-item-title,
+.movie-item:hover .movie-item-buttons{
+    opacity: 1;
+}
+
+.movie-item:hover .movie-item-img{
+    transform: scale(1.2);
+    margin: 0 30px;
+    opacity: .5;
+
+}
+
+.movie-list{
+    height: 300px;
+    display: flex;
+    align-items: center;
+    column-gap: 30px;
+    transform: translateX(0);
+    transition: 1s all ease-in-out;
+
+}
+.movie-list-wrapper{
+    overflow: hidden;
+    position: relative;
+}
+
+.movie-item-img{
+    width: 16.875rem;
+    height: 12.5rem;
+    object-fit: cover;
+    transition: 1s all ease-in-out;
+
+}
+
+.movie-item-title{
+
+    background-color: rgb(40, 40, 40, 0.4);
+    padding: 0 0.625rem;
+    font-size: 1.75rem;
+    font-weight: bold;
+    position: absolute;
+    top: 10%;
+    left: 2.5rem;
+    opacity: 0;
+    transition: 1s all ease-in-out;
+
+
+}
+
+.movie-item-buttons{
+
+    background-color: rgb(40, 40, 40, 0.6);
+    padding: 0.625rem;
+    
+    font-weight: bold;
+    position: absolute;
+    bottom: 10%;
+    left: 2.5rem;
+    display: flex;
+    column-gap: 1.25rem;
+    opacity: 0;
+
+    transition: 1s all ease-in-out;
+
+}
+
+
+.movie-item-buttons i{
+    cursor: pointer;
+    opacity: .5;
+    font-size: 20px;
+    transition: 0.5s all ease;
+}
+
+.movie-item-buttons i:hover{
+    opacity: 1;
+}
+
+
+.arrow{
+    width: 100px;
+    display: flex;
+    font-size: 80px;
+    position: absolute;
+    right: 0;
+    top: 100px;
+    opacity: .5;
+    transform: .5S ease all;
+    cursor: pointer;
+
+}
+.arrow:hover{
+    opacity: 1;
+}
+
+
+/* Movie list end */
+
+/* Dark mod start */
+
+.container.active{
+    background-color: white;
+}
+
+.navbar.active{
+    background-color: white;
+    color: black;
+}
+
+.sidebar.active{
+    background-color: white;
+}
+
+.sidebar i.active{
+    color: black;
+}
+
+.movie-list-title.active{
+    color: black;
+}
+
+.toggle.active{
+    background-color: black;
+}
+
+.toggle-ball.active{
+    background-color: white;
+    transform: translateX(-1.125rem);
+}
+
+.movie-list-filter select.active{
+ background-color: white;
+ color: black;
+}
+
+/* Dark mod end */
+
+
+/* reponsive start */
+@media only screen and (max-width: 800px){
+    .menu-container{
+        display: none;
+    }
+
+    .featured-content{
+        height: 60vh;
+    }
+
+    .featured-title{
+        width: 150px;
+    }
+    
+    .featured-desc{
+        width: 270px;
+        font-size: 14px;
+     
+        background-color: rgba(145, 142, 142, 0.5);
+        padding: 10px;
+        margin: 30px 0;
+        color: black;
+    
+    }
+
+    .featured-buttons {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .featured-buttons button{
+
+        padding: 10px 25px;
+        border-radius: 2px;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        display: flex;
+        column-gap: 10px;
+        font-size: 16px;
+    }
+
+
+
+
+    
+}
+
+/* reponsive end */
